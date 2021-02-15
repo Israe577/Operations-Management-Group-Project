@@ -1,0 +1,49 @@
+---
+title: "Group Project"
+date: "`r format(Sys.Date(), '%d %B, %Y')`"
+output:
+  pagedown::html_paged:
+    css: www/my_css.css
+    number_sections: no
+knit: pagedown::chrome_print
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, class.source = "watch-out", options(scipen=999)) 
+source("www/init.R")
+source("www/Table_Design.R")
+```
+
+```{r, echo=FALSE}
+htmltools::img(
+  src = knitr::image_uri(file.path("www/BSM_Logo.png")), 
+  alt = 'logo', 
+  style = 'position:absolute; top:0; right:5px; padding:10px; width:200px'
+)
+```
+
+```{r}
+library(readr)
+treelocation <- read_csv("M008_Punt_de_recollida_darbres_de_Nadal.csv")
+attach(treelocation)
+```
+
+```{r}
+table(NOM_DISTRICTE)
+```
+
+
+```{r}
+density2019 <- read_csv("2019_densitat.csv")
+attach(density2019)
+```
+
+https://socviz.co/maps.html 
+
+```{r}
+library(readr)
+M003_Punt_verd <- read_csv("M003_Punt_verd.csv")
+View(M003_Punt_verd)
+```
+
